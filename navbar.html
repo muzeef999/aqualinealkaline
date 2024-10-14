@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="box-shadow: 0 3px 5px -3px #000; padding: 0.5rem 0;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="uploads/1/4/9/5/14956064/aqualinelogo-9.png" alt="AQUALINE ME" style="width: 120px; height: auto;" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link"  href="index.html" style="font-weight: 600; padding: 0.5rem 1rem;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" style="font-weight: 500; padding: 0.5rem 1rem;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html" style="font-weight: 500; padding: 0.5rem 1rem;">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certifications.html" style="font-weight: 500; padding: 0.5rem 1rem;">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html" style="font-weight: 500; padding: 0.5rem 1rem;">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html" style="font-weight: 500; padding: 0.5rem 1rem;">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+    // get the current page URL
+    var currentPage = window.location.pathname;
+  
+    // get the navigation links
+    var navLinks = document.querySelectorAll('.nav-link');
+  
+    // loop through the navigation links and add the active class to the current page link
+    navLinks.forEach(function(link) {
+      if (link.href === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+  
+  <style>
+    .nav-link.active {
+      background-color: #ccc;
+      color: #fff;
+      border-bottom: 2px solid #333;
+    }
+  
+    .nav-link {
+      position: relative; /* Needed for the pseudo-element */
+      color: #000; /* Default link color */
+      text-decoration: none; /* Remove underline */
+    }
+  
+    .nav-link:hover {
+      color: #000; /* Change color on hover if desired */
+    }
+  
+    .nav-link::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(to right, #0059A9, #63BCD9); /* Gradient color */
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0; /* Position it at the bottom */
+      transform: scaleX(0); /* Start with no width */
+      transition: transform 0.3s ease; /* Smooth transition */
+    }
+  
+    .nav-link:hover::after {
+      transform: scaleX(1); /* Expand to full width on hover */
+    }
+  
+    /* Add this CSS code to your stylesheet to compensate for the fixed navbar */
+    body {
+      padding-top: 70px; /* Adjust the value to match the height of your navbar */
+    }
+  
+    .navbar {
+      padding: 1em;
+    }
+  </style>
